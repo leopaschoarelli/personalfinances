@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="CREATE_TABLE_PERMISSION" author="LHPR">
+
+        <createTable tableName="PF_PERMISSION" remarks="Table of permissions.">
+
+            <column name="ID"  type="BIGINT" autoIncrement="true" remarks="Id">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_PF_PERMISSION"/>
+            </column>
+
+            <column name="NAME" type="VARCHAR(60)" remarks="Name">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="DESCRIPTION" type="VARCHAR(100)" remarks="Description">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
