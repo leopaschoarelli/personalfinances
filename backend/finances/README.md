@@ -51,7 +51,7 @@ export DATABASE_PASSWORD=root
 
 ##### Substitua o "CONTEUDO_BASE64_ARQUIVO_JKS" pelo resultado do comando CAT demonstrado acima
 ```bash
-KEY_JKS=base64:CONTEUDO_BASE64_ARQUIVO_JKS
+export KEY_JKS=base64:CONTEUDO_BASE64_ARQUIVO_JKS
 ```
 
 ```bash
