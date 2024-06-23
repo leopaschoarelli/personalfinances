@@ -1,0 +1,54 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="CREATE_TABLE_USER_GROUP" author="LHPR">
+
+        <createTable tableName="PF_USER_GROUP" remarks="User and group relationship table.">
+
+            <column name="USER_ID" type="BIGINT" remarks="User Id">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="GROUP_ID" type="BIGINT" remarks="Group Id">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+    <changeSet id="CREATE_PRIMARY_KEY_USER_GROUP" author="LHPR">
+
+        <addPrimaryKey
+                columnNames="USER_ID, GROUP_ID"
+                constraintName="PK_USER_GROUP"
+                tableName="PF_USER_GROUP"/>
+
+    </changeSet>
+
+    <changeSet id="CREATE_FOREIGN_KEY_USER_GROUP" author="LHPR">
+
+        <addForeignKeyConstraint
+                baseColumnNames="GROUP_ID"
+                baseTableName="PF_USER_GROUP"
+                constraintName="FK_USER_GROUP_GROUP"
+                referencedColumnNames="ID"
+                referencedTableName="PF_GROUP" />
+
+    </changeSet>
+
+    <changeSet id="CREATE_FOREIGN_KEY_PERMISSION_GROUP" author="LHPR">
+
+        <addForeignKeyConstraint
+                baseColumnNames="USER_ID"
+                baseTableName="PF_USER_GROUP"
+                constraintName="FK_USER_GROUP_USER"
+                referencedColumnNames="ID"
+                referencedTableName="PF_USER" />
+
+    </changeSet>
+
+</databaseChangeLog>

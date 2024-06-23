@@ -1,0 +1,36 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="CREATE_TABLE_OAUTH2_CONSENT" author="LHPR">
+
+        <createTable tableName="OAUTH2_AUTHORIZATION_CONSENT" remarks="Table of oauth2 consent.">
+
+            <column name="REGISTERED_CLIENT_ID"  type="VARCHAR(100)" remarks="Registered Client Id">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="PRINCIPAL_NAME" type="VARCHAR(200)" remarks="Principal Name">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="AUTHORITIES" type="VARCHAR(1000)" remarks="Authorities">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+    <changeSet id="CREATE_PRIMARY_KEY_OAUTH_CONSENT" author="LHPR">
+
+        <addPrimaryKey
+                columnNames="REGISTERED_CLIENT_ID, PRINCIPAL_NAME"
+                constraintName="PK_OAUTH_CONSENT"
+                tableName="OAUTH2_AUTHORIZATION_CONSENT"/>
+
+    </changeSet>
+
+</databaseChangeLog>

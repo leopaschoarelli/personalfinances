@@ -1,0 +1,31 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="CREATE_TABLE_USER" author="LHPR">
+
+        <createTable tableName="PF_USER" remarks="Table of users.">
+
+            <column name="ID"  type="BIGINT" autoIncrement="true" remarks="Id">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_PF_USER"/>
+            </column>
+
+            <column name="NAME" type="VARCHAR(200)" remarks="Name">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="EMAIL" type="VARCHAR(50)" remarks="Email">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="PASSWORD" type="VARCHAR(1000)" remarks="Password">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
