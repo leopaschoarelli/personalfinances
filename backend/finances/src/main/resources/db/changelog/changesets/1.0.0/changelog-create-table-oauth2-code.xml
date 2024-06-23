@@ -1,0 +1,21 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="CREATE_TABLE_OAUTH_CODE" author="LHPR">
+
+        <createTable tableName="OAUTH_CODE" remarks="Table of oauth code.">
+
+            <column name="CODE" type="VARCHAR(256)" remarks="Code">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="AUTHENTICATION" type="BLOB"  remarks="Authentication"/>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

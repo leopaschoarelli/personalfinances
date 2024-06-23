@@ -1,0 +1,73 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="CREATE_TABLE_OAUTH_AUTHORIZATION" author="LHPR">
+
+        <createTable tableName="OAUTH2_AUTHORIZATION" remarks="Table of oauth authorization.">
+
+            <column name="ID"  type="VARCHAR(100)" remarks="Id">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_OAUTH_AUTHORIZATION"/>
+            </column>
+
+            <column name="REGISTERED_CLIENT_ID" type="VARCHAR(100)" remarks="Registered Client Id">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="PRINCIPAL_NAME" type="VARCHAR(200)" remarks="Principal Name">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="AUTHORIZATION_GRANT_TYPE" type="VARCHAR(100)" remarks="Authorization Grant Type">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="AUTHORIZED_SCOPES" type="VARCHAR(1000)" remarks="Authorized Scopes"  defaultValue="" />
+
+            <column name="ATTRIBUTES" type="BLOB" remarks="Attributes" />
+
+            <column name="STATE" type="VARCHAR(500)" remarks="State"  defaultValue="" />
+
+            <column name="AUTHORIZATION_CODE_VALUE" type="BLOB" remarks="Authorization Code Value" />
+            
+            <column name="AUTHORIZATION_CODE_ISSUED_AT" type="TIMESTAMP" remarks="Authorization Code Issued At" />
+
+            <column name="AUTHORIZATION_CODE_EXPIRES_AT" type="TIMESTAMP" remarks="Authorization Code Expires At" />
+
+            <column name="AUTHORIZATION_CODE_METADATA" type="BLOB" remarks="Authorization Code Metadata" />
+
+            <column name="ACCESS_TOKEN_VALUE" type="BLOB" remarks="Access Token Value" />
+
+            <column name="ACCESS_TOKEN_ISSUED_AT" type="TIMESTAMP" remarks="Access Token Issued At" />
+
+            <column name="ACCESS_TOKEN_EXPIRES_AT" type="TIMESTAMP" remarks="Access Token Expires At" />
+
+            <column name="ACCESS_TOKEN_METADATA" type="BLOB" remarks="Access Token Metadata" />
+
+            <column name="ACCESS_TOKEN_TYPE" type="VARCHAR(100)" remarks="Access Token Type" defaultValue="" />
+
+            <column name="ACCESS_TOKEN_SCOPES" type="VARCHAR(1000)" remarks="Access Token Scopes" defaultValue="" />
+
+            <column name="OIDC_ID_TOKEN_VALUE" type="BLOB" remarks="OIDC ID Token Value" />
+
+            <column name="OIDC_ID_TOKEN_ISSUED_AT" type="TIMESTAMP" remarks="OIDC ID Token Issued At" />
+
+            <column name="OIDC_ID_TOKEN_EXPIRES_AT" type="TIMESTAMP" remarks="OIDC ID Token Expires At" />
+
+            <column name="OIDC_ID_TOKEN_METADATA" type="BLOB" remarks="OIDC ID Token Metadata" />
+
+            <column name="REFRESH_TOKEN_VALUE" type="BLOB" remarks="Refresh Token Value" />
+
+            <column name="REFRESH_TOKEN_ISSUED_AT" type="TIMESTAMP" remarks="Refresh Token Issued At" />
+
+            <column name="REFRESH_TOKEN_EXPIRES_AT" type="TIMESTAMP" remarks="Refresh Token Expires At" />
+
+            <column name="REFRESH_TOKEN_METADATA" type="BLOB" remarks="Refresh Token Metadata" />
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

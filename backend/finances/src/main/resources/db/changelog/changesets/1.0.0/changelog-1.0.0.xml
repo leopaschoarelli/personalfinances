@@ -1,0 +1,21 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include file="changelog-create-table-user.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-table-group.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-table-user-group.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-table-permission.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-table-group-permission.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-insert-user-group-permission-default.xml" relativeToChangelogFile="true"/>
+
+    <include file="changelog-create-table-oauth2-authorization.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-table-oauth2-registered-client.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-insert-oauth2-registered-client.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-table-oauth2-consent.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-table-oauth2-code.xml" relativeToChangelogFile="true"/>
+
+
+</databaseChangeLog>

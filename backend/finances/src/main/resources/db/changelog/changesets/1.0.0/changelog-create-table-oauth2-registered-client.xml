@@ -1,0 +1,63 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="CREATE_TABLE_OAUTH_REGISTERED_CLIENT" author="LHPR">
+
+        <createTable tableName="OAUTH2_REGISTERED_CLIENT" remarks="Table of oauth registered client.">
+
+            <column name="ID" type="VARCHAR(100)" remarks="Id">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_OAUTH2_REGISTERED_CLIENT"/>
+            </column>
+
+            <column name="CLIENT_ID" type="VARCHAR(100)" remarks="Client Id">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="CLIENT_ID_ISSUED_AT" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP" remarks="Client Id Issued At">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="CLIENT_SECRET" type="VARCHAR(200)" remarks="Client Secret">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="CLIENT_SECRET_EXPIRES_AT" type="TIMESTAMP" remarks="Client Secret Expires At">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="CLIENT_NAME" type="VARCHAR(200)" remarks="Client Name">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="CLIENT_AUTHENTICATION_METHODS" type="VARCHAR(1000)" remarks="Client Authentication Methods">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="AUTHORIZATION_GRANT_TYPES" type="VARCHAR(1000)" remarks="Authorization Grant Types">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="REDIRECT_URIS" type="VARCHAR(1000)" remarks="Redirect URIs">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="SCOPES" type="VARCHAR(1000)" remarks="Scopes">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="CLIENT_SETTINGS" type="VARCHAR(2000)" remarks="Client Settings">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="TOKEN_SETTINGS" type="VARCHAR(2000)" remarks="Token Settings">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

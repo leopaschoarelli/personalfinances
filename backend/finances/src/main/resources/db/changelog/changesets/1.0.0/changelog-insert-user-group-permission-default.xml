@@ -1,0 +1,60 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="INSERT_USER_ADMIN_DEFAULT" author="LHPR">
+        <preConditions onFail="HALT">
+            <tableExists tableName="PF_USER"/>
+        </preConditions>
+        <insert tableName="PF_USER">
+            <column name="id" value="1"/>
+            <column name="name" value="Leonardo Paschoarelli"/>
+            <column name="email" value="leonardo.lhpr@gmail.com"/>
+            <column name="password" value="$2a$12$aWkqBWPHeUA6dB8yxl0f4eZVlyQSwqu/KDO9qXK7LZ1LgE26vRTC2"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="INSERT_GROUP_ADMIN_DEFAULT" author="LHPR">
+        <preConditions onFail="HALT">
+            <tableExists tableName="PF_GROUP"/>
+        </preConditions>
+        <insert tableName="PF_GROUP">
+            <column name="id" value="1"/>
+            <column name="name" value="Administrador"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="INSERT_PERMISSION_ADMIN_READ_DEFAULT" author="LHPR">
+        <preConditions onFail="HALT">
+            <tableExists tableName="PF_PERMISSION"/>
+        </preConditions>
+        <insert tableName="PF_PERMISSION">
+            <column name="id" value="1"/>
+            <column name="name" value="READ_TEST"/>
+            <column name="description" value="Read test"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="INSERT_USER_GROUP_DEFAULT" author="LHPR">
+        <preConditions onFail="HALT">
+            <tableExists tableName="PF_USER_GROUP"/>
+        </preConditions>
+        <insert tableName="PF_USER_GROUP">
+            <column name="user_id" value="1"/>
+            <column name="group_id" value="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="INSERT_GROUP_PERMISSION_DEFAULT" author="LHPR">
+        <preConditions onFail="HALT">
+            <tableExists tableName="PF_GROUP_PERMISSION"/>
+        </preConditions>
+        <insert tableName="PF_GROUP_PERMISSION">
+            <column name="group_id" value="1"/>
+            <column name="permission_id" value="1"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

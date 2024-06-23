@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    url: jdbc:mysql://localhost:3306/finances?createDatabaseIfNotExist=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/databaseChangelog.xml
+    database-change-log-table: PF_DB_CHANGELOG
+    database-change-log-lock-table: PF_DB_CHANGELOG_LOCK
+  security:
+    oauth2:
+      resourceserver:
+        opaque-token:
+          introspection-uri: http://localhost:8080/oauth2/introspect
+          client-id: personalFinances-backend
+          client-secret: personalfinances
+        jwt:
+          jwk-set-uri: http://localhost:8080/oauth2/jwks
+server:
+  port: 8080
+
+
+
+finances:
+  auth:
+    provider-url: http://localhost:8080
+personal:
+  finances:
+    auth:
+      provider-url: http://localhost:8080
+    jwt:
+      keystore:
+        jks-location: ${KEY_JKS}
+        keypair-alias: ${KEY_ALIAS}
+        password: ${KEY_ALIAS_PASSWORD}
