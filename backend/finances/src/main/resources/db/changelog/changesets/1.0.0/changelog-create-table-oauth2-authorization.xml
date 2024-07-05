@@ -66,6 +66,22 @@
 
             <column name="REFRESH_TOKEN_METADATA" type="BLOB" remarks="Refresh Token Metadata" />
 
+            <column name="USER_CODE_VALUE" type="BLOB" remarks="User Code Value" />
+
+            <column name="USER_CODE_ISSUED_AT" type="TIMESTAMP" remarks="User Code Issued At" />
+
+            <column name="USER_CODE_EXPIRES_AT" type="TIMESTAMP" remarks="User Code Expires At" />
+
+            <column name="USER_CODE_METADATA" type="BLOB" remarks="User Code Metadata" />
+
+            <column name="DEVICE_CODE_VALUE" type="BLOB" remarks="Device Code Value" />
+
+            <column name="DEVICE_CODE_ISSUED_AT" type="TIMESTAMP" remarks="Device Code Issued At" />
+
+            <column name="DEVICE_CODE_EXPIRES_AT" type="TIMESTAMP" remarks="Device Code Expires At" />
+
+            <column name="DEVICE_CODE_METADATA" type="BLOB" remarks="Device Code Metadata" />
+
         </createTable>
 
     </changeSet>
