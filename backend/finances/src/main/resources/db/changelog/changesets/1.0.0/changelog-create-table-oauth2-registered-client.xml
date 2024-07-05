@@ -44,6 +44,10 @@
                 <constraints nullable="true"/>
             </column>
 
+            <column name="POST_LOGOUT_REDIRECT_URIS" type="VARCHAR(1000)" remarks="Redirect URIs Logout">
+                <constraints nullable="true"/>
+            </column>
+
             <column name="SCOPES" type="VARCHAR(1000)" remarks="Scopes">
                 <constraints nullable="false"/>
             </column>

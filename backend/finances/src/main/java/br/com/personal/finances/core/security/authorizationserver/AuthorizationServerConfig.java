@@ -25,7 +25,6 @@ import org.springframework.security.oauth2.server.authorization.token.JwtEncodin
 import org.springframework.security.oauth2.server.authorization.token.OAuth2TokenCustomizer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
-import org.springframework.security.web.util.matcher.RequestMatcher;
 
 import java.security.KeyStore;
 import java.util.HashSet;
@@ -38,18 +37,16 @@ public class AuthorizationServerConfig {
     @Order(Ordered.HIGHEST_PRECEDENCE)
     public SecurityFilterChain authFilterChain(HttpSecurity http) throws Exception {
 
-        var authorizationServerConfigure = new OAuth2AuthorizationServerConfigurer();
+        var authorizationServerConfigurer = new OAuth2AuthorizationServerConfigurer();
 
-        //authorizationServerConfigure.authorizationEndpoint(customizer -> customizer.consentPage("/oauth2/consent"));
-
-        var endpointsMatcher = authorizationServerConfigure.getEndpointsMatcher();
+        var endpointsMatcher = authorizationServerConfigurer.getEndpointsMatcher();
 
         http.securityMatcher(endpointsMatcher)
             .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
             .csrf(csrf -> csrf.ignoringRequestMatchers(endpointsMatcher))
             .formLogin(Customizer.withDefaults())
                 .exceptionHandling(exceptions -> exceptions.authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login")))
-            .apply(authorizationServerConfigure);
+                .apply(authorizationServerConfigurer);
 
         return http.formLogin(customizer -> customizer.loginPage("/login")).build();
     }
