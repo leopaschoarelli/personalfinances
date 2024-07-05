@@ -7,30 +7,17 @@
     <changeSet id="INSERT_REGISTERED_CLIENTS_DEFAULT" author="LHPR">
         <insert tableName="OAUTH2_REGISTERED_CLIENT">
             <column name="ID" value="1"/>
-            <column name="CLIENT_ID" value="personalFinances-backend"/>
+            <column name="CLIENT_ID" value="personalFinances"/>
             <column name="CLIENT_ID_ISSUED_AT" value="2024-06-23 15:19:02"/>
-            <column name="CLIENT_SECRET" value="$2a$10$6vUnw.UTQIAD77jTh0f9XuTBdT13tUkOWLP2CwRBKI0b5Sn0K3Deq"/>
-            <column name="CLIENT_NAME" value="Personal Finances Backend"/>
+            <column name="CLIENT_SECRET" value="$2a$12$yItXX/ZD/6O5pjt75d2lbuzW4nHndK2tOzy1YHwafhtCI0ysNsom."/>
+            <column name="CLIENT_NAME" value="Personal Finances"/>
             <column name="CLIENT_AUTHENTICATION_METHODS" value="client_secret_basic"/>
-            <column name="AUTHORIZATION_GRANT_TYPES" value="client_credentials"/>
-            <column name="REDIRECT_URIS" value=""/>
+            <column name="AUTHORIZATION_GRANT_TYPES" value="client_credentials,refresh_token,authorization_code"/>
+            <column name="REDIRECT_URIS" value="http://127.0.0.1:8080/authorized"/>
+            <column name="POST_LOGOUT_REDIRECT_URIS" value=""/>
             <column name="SCOPES" value="READ,WRITE"/>
             <column name="CLIENT_SETTINGS" value="{&quot;@class&quot;:&quot;java.util.Collections$UnmodifiableMap&quot;,&quot;settings.client.require-proof-key&quot;:false,&quot;settings.client.require-authorization-consent&quot;:false}"/>
             <column name="TOKEN_SETTINGS" value="{&quot;@class&quot;:&quot;java.util.Collections$UnmodifiableMap&quot;,&quot;settings.token.reuse-refresh-tokens&quot;:true,&quot;settings.token.id-token-signature-algorithm&quot;:[&quot;org.springframework.security.oauth2.jose.jws.SignatureAlgorithm&quot;,&quot;RS256&quot;],&quot;settings.token.access-token-time-to-live&quot;:[&quot;java.time.Duration&quot;,1800.000000000],&quot;settings.token.access-token-format&quot;:{&quot;@class&quot;:&quot;org.springframework.security.oauth2.server.authorization.settings.OAuth2TokenFormat&quot;,&quot;value&quot;:&quot;self-contained&quot;},&quot;settings.token.refresh-token-time-to-live&quot;:[&quot;java.time.Duration&quot;,3600.000000000],&quot;settings.token.authorization-code-time-to-live&quot;:[&quot;java.time.Duration&quot;,300.000000000]}"/>
-        </insert>
-
-        <insert tableName="OAUTH2_REGISTERED_CLIENT">
-            <column name="ID" value="2"/>
-            <column name="CLIENT_ID" value="personalFinances-frontend"/>
-            <column name="CLIENT_ID_ISSUED_AT" value="2024-06-23 15:19:03"/>
-            <column name="CLIENT_SECRET" value="$2a$10$5XNlYeveZgJA33./lL.8oO7hF/slE.Xqdr7M2Z.oUbGQphKEaNWk."/>
-            <column name="CLIENT_NAME" value="Personal Finances Frontend"/>
-            <column name="CLIENT_AUTHENTICATION_METHODS" value="client_secret_basic"/>
-            <column name="AUTHORIZATION_GRANT_TYPES" value="refresh_token,authorization_code"/>
-            <column name="REDIRECT_URIS" value="http://127.0.0.1:8080/authorized"/>
-            <column name="SCOPES" value="READ,WRITE"/>
-            <column name="CLIENT_SETTINGS" value="{&quot;@class&quot;:&quot;java.util.Collections$UnmodifiableMap&quot;,&quot;settings.client.require-proof-key&quot;:false,&quot;settings.client.require-authorization-consent&quot;:true}"/>
-            <column name="TOKEN_SETTINGS" value="{&quot;@class&quot;:&quot;java.util.Collections$UnmodifiableMap&quot;,&quot;settings.token.reuse-refresh-tokens&quot;:false,&quot;settings.token.id-token-signature-algorithm&quot;:[&quot;org.springframework.security.oauth2.jose.jws.SignatureAlgorithm&quot;,&quot;RS256&quot;],&quot;settings.token.access-token-time-to-live&quot;:[&quot;java.time.Duration&quot;,1800.000000000],&quot;settings.token.access-token-format&quot;:{&quot;@class&quot;:&quot;org.springframework.security.oauth2.server.authorization.settings.OAuth2TokenFormat&quot;,&quot;value&quot;:&quot;self-contained&quot;},&quot;settings.token.refresh-token-time-to-live&quot;:[&quot;java.time.Duration&quot;,86400.000000000],&quot;settings.token.authorization-code-time-to-live&quot;:[&quot;java.time.Duration&quot;,300.000000000]}"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
