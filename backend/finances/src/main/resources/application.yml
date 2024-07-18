@@ -21,6 +21,9 @@ spring:
 server:
   port: 8080
 
+jwt:
+  secret: ${KEY_ALIAS_PASSWORD}
+  expiration: 86400000
 
 
 finances:

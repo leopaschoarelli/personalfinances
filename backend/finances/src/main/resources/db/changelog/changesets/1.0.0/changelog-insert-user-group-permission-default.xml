@@ -10,8 +10,7 @@
         </preConditions>
         <insert tableName="PF_USER">
             <column name="id" value="1"/>
-            <column name="name" value="Leonardo Paschoarelli"/>
-            <column name="email" value="leonardo.lhpr@gmail.com"/>
+            <column name="username" value="leonardo.lhpr@gmail.com"/>
             <column name="password" value="$2a$12$aWkqBWPHeUA6dB8yxl0f4eZVlyQSwqu/KDO9qXK7LZ1LgE26vRTC2"/>
         </insert>
     </changeSet>

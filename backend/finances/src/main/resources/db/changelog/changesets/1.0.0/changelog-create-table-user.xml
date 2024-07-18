@@ -12,11 +12,7 @@
                 <constraints nullable="false" primaryKey="true" primaryKeyName="PK_PF_USER"/>
             </column>
 
-            <column name="NAME" type="VARCHAR(200)" remarks="Name">
-                <constraints nullable="false"/>
-            </column>
-
-            <column name="EMAIL" type="VARCHAR(50)" remarks="Email">
+            <column name="USERNAME" type="VARCHAR(200)" remarks="Name">
                 <constraints nullable="false"/>
             </column>
 
